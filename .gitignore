@@ -8,3 +8,5 @@ test
 js
 *.vsix
 file.tslint
+
+originals/

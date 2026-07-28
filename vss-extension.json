@@ -1,14 +1,14 @@
 {
     "manifestVersion": 1,
-    "id": "contributions",
-    "version": "2.1.26",
+    "id": "contributions-heatmap-green",
+    "version": "2.1.31",
     "name": "Contributions Graph",
     "scopes": [
         "vso.work",
         "vso.code"
     ],
     "description": "View account contributions by user.",
-    "publisher": "ottostreifel",
+    "publisher": "simonkprice",
     "icons": {
         "default": "img/logo.png"
     },
@@ -37,7 +37,7 @@
     },
     "repository": {
         "type": "git",
-        "uri": "https://github.com/ostreifel/vsts-contributions"
+        "uri": "https://github.com/simonkprice/vsts-contributions"
     },
     "branding": {
         "color": "rgb(220, 235, 252)",
@@ -54,7 +54,8 @@
         }
     ],
     "categories": [
-        "Collaborate"
+        "Azure Boards",
+        "Azure Repos"
     ],
     "contributions": [
         {
