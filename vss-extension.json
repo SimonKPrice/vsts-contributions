@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "contributions-heatmap-green",
-    "version": "2.1.31",
+    "version": "2.1.32",
     "name": "Contributions Graph",
     "scopes": [
         "vso.work",
