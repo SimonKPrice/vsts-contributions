@@ -1,5 +1,3 @@
-import { DelayedFunction } from "VSS/Utils/Core";
-
 export interface ValueWithTimings<T> {
     value: T;
     properties: IProperties;
@@ -12,29 +10,13 @@ export interface IMeasurements {
     [name: string]: number;
 }
 
-const flush = new DelayedFunction(null, 3000, "flush", () => {
-    const insights = getInsights();
-    if (insights) {
-        insights.flush();
-    }
-});
+// Telemetry has been removed so this extension only communicates with the
+// Azure DevOps host. These functions are intentionally no-ops and are kept so
+// existing call sites continue to work without sending any data externally.
 export function flushNow() {
-    flush.invokeNow();
+    // no-op
 }
 
-export function trackEvent(name: string, properties?: IProperties, measurements?: IMeasurements) {
-    const insights = getInsights();
-    if (insights) {
-        const { host } = VSS.getWebContext();
-        properties = {
-            ...(properties || {}),
-            host: host.name || host.authority,
-            contributionLocation: window['contributionLocation']
-        };
-        insights.trackEvent(name, properties, measurements);
-        flush.start();
-    }
-}
-function getInsights(): Microsoft.ApplicationInsights.IAppInsights | undefined {
-    return window["appInsights"];
+export function trackEvent(_name: string, _properties?: IProperties, _measurements?: IMeasurements) {
+    // no-op
 }
